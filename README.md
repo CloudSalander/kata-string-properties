@@ -1,0 +1,1 @@
+# kata-string-properties
