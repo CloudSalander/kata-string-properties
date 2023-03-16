@@ -17,27 +17,32 @@ function isPangram(string $expression): bool {
 	}
 	return true;
 }
-/*
+
 function isIsogram(string $expression): bool {
-	$string_array = explode("", $expression);
-	var_dump(array_count_values($expression));
-}*/
-/* Test isHeterogram */
+	$expression_array = str_split($expression);
+	$count_values = array_count_values($expression_array);
+	$current_value = $count_values[$expression[0]];
+	foreach ($count_values as $count_value) {
+		if($count_value != $current_value) return false;
+	}
+	return true;
+}
+// Test isHeterogram 
 /*
 var_dump(isHeterogram("hola"));
 var_dump(isHeterogram("holla"));
 var_dump(isHeterogram("holaa"));
 var_dump(isHeterogram(""));
 */
-/*Test isIsogram */
+//Test isIsogram 
 /*
-isIsogram("quetal!");
+var_dump(isIsogram("quetall!"));
+var_dump(isIsogram("nana"));
 */
-
-/*Test isPangram */
-
+//Test isPangram 
+/*
 var_dump(isPangram("ho"));
 var_dump(isPangram("abcdefghijklmnopqrstuvwxyz"));
 var_dump(isPangram("abcdefghijklmnopqrstuvwxyztuvwxyz"));
-
+*/
 ?>
